@@ -1,8 +1,11 @@
 import React from 'react'
+import {OurServices} from '../components'
+
 
 const Home = () => {
   return (
-    <div className="homes">Home</div>
+    <OurServices />
+
   )
 }
 

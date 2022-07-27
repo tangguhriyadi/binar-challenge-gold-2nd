@@ -52,6 +52,12 @@ body, main {
   cursor:pointer;
   border-radius: 2px;
 }
+.girl {
+  width: 100%;
+}
+.serviceRow {
+  margin:0;
+}
 
 @media screen and (max-width:1008px) {
   .nav1, .nav2, .navbar-toggler {
@@ -62,6 +68,7 @@ body, main {
     padding-left: 16px !important;
   }
 }
+
 @media screen and (max-width:768px) {
   .bannerRow {
     height: 593px;
@@ -70,4 +77,19 @@ body, main {
     padding-top:32px !important;
   }
   
+  .serviceRow {
+    margin-top: 50px !important;
+  }
+  .serviceLeft {
+    padding-right: 0 !important;
+    justify-content: center !important;
+    padding-left:50px !important;
+    padding-right: 50px !important;
+  }
+  .serviceRightHead {
+    margin-bottom: 16px !important;
+  }
+  .serviceRight {
+    padding-left: 16px !important;
+  }
 }
