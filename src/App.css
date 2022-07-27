@@ -1,5 +1,10 @@
-*, body, main {
+* {
+  margin:0;
+  padding:0;
+}
+body, main {
   font-family: Arial;
+
 }
 
 .font1 {
@@ -33,4 +38,11 @@
   font-weight: 700;
   font-size: 16px;
   line-height: 24px;
+}
+
+@media screen and (max-width:925px) {
+  .nav1, .nav2, .navbar-toggler {
+    margin-left: 16px !important;
+    margin-right: 16px !important;
+  }
 }
