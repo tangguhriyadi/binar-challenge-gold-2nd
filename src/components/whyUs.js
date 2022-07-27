@@ -8,6 +8,7 @@ import icon_professional from "../icon/icon_professional.svg";
 const WhyUs = () => {
   return (
     <Container
+      id="whyUs"
       className="whyContainer"
       style={{
         marginTop: "118px",
