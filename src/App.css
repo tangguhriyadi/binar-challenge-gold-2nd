@@ -40,9 +40,34 @@ body, main {
   line-height: 24px;
 }
 
-@media screen and (max-width:925px) {
+.btn1 {
+  color: #FFFFFF;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  width: 140px;
+  height: 36px;
+  background-color:#5CB85F;
+  padding:8px 12px;
+  cursor:pointer;
+  border-radius: 2px;
+}
+
+@media screen and (max-width:1008px) {
   .nav1, .nav2, .navbar-toggler {
     margin-left: 16px !important;
     margin-right: 16px !important;
   }
+  .bannerLeft {
+    padding-left: 16px !important;
+  }
+}
+@media screen and (max-width:768px) {
+  .bannerRow {
+    height: 593px;
+  }
+  .bannerLeft {
+    padding-top:32px !important;
+  }
+  
 }

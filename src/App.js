@@ -3,11 +3,21 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import {NavbarComp} from './components'
+import {Home} from './pages'
 
 function App() {
   return (
-    <NavbarComp />
+    <BrowserRouter>
+       <NavbarComp />
+       
+        <main>
+          <Routes>
+            <Route path="/" element={<Home />} exact/>
+          </Routes>
+        </main>
+      </BrowserRouter>
   );
 }
 
