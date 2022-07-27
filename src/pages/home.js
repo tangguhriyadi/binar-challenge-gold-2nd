@@ -1,11 +1,15 @@
 import React from 'react'
-import {OurServices} from '../components'
+import {OurServices, WhyUs} from '../components'
 
 
 const Home = () => {
   return (
+    <>
     <OurServices />
-
+    <WhyUs />
+    </>
+   
+    
   )
 }
 
