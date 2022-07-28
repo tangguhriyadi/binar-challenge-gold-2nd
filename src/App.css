@@ -211,6 +211,12 @@ body, main {
   .faqLeft {
     width: 100% !important;
   }
+  .footerContainer {
+    margin: 60px 16px !important;
+  }
+  .footerRow {
+    padding-right: 76px !important;
+  }
 }
 
 
