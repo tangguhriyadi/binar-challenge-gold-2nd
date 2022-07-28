@@ -1,5 +1,5 @@
 import React from 'react'
-import {OurServices, WhyUs, Testimonial, Jumbocard} from '../components'
+import {OurServices, WhyUs, Testimonial, Jumbocard, Faq} from '../components'
 
 
 const Home = () => {
@@ -9,6 +9,7 @@ const Home = () => {
     <WhyUs />
     <Testimonial/>
     <Jumbocard />
+    <Faq />
     </>
    
     

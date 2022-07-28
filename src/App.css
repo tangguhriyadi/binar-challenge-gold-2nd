@@ -103,7 +103,11 @@ body, main {
   margin-bottom: 0;
   color: white;
 }
-
+@media screen and (max-width:1008px) {
+  .faqText {
+    padding-right: 0 !important;
+  }
+}
 @media screen and (max-width:1008px) {
   .nav1, .nav2, .navbar-toggler {
     margin-left: 16px !important;
@@ -180,6 +184,32 @@ body, main {
   }
   .btncard {
     margin-top: 32px !important;
+  }
+  .faqContainer {
+    margin-top: 40px !important;
+    padding:0 !important;
+    margin-left: 16px !important;
+    margin-right: 16px !important;
+    padding-right: 16px !important; 
+  }
+  .faqContainer2 {
+    display: flex;
+    flex-direction: column !important;
+    align-items: center !important;
+    padding-right: 16px !important; 
+  }
+  .faqHead {
+    text-align: center !important;
+  }
+  .faqText {
+    /* max-width: 500px !important; */
+    text-align: center;
+  }
+  .faqRight {
+    width:100% !important; 
+  }
+  .faqLeft {
+    width: 100% !important;
   }
 }
 
