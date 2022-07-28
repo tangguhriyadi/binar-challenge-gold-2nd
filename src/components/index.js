@@ -5,5 +5,6 @@ import Testimonial from './testimonial'
 import Jumbocard from './jumbocard'
 import Faq from './faq'
 import Footer from './footer'
+import Banner from './banner'
 
-export {NavbarComp, OurServices, WhyUs, Testimonial, Jumbocard, Faq, Footer}
+export {NavbarComp, OurServices, WhyUs, Testimonial, Jumbocard, Faq, Footer, Banner}

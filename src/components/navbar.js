@@ -1,5 +1,5 @@
 import { Container, Nav, Navbar, Offcanvas } from "react-bootstrap";
-import Banner from './banner'
+/* import Banner from './banner' */
 
 function NavbarComp() {
   return (
@@ -32,7 +32,7 @@ function NavbarComp() {
       </Navbar.Offcanvas>
     </Container>
   </Navbar>
-  <Banner />
+  
     </>
    
   );

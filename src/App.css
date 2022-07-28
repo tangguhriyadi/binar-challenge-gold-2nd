@@ -51,6 +51,8 @@ body, main {
   padding:8px 12px;
   cursor:pointer;
   border-radius: 2px;
+  border-style: none;
+  
 }
 .girl {
   width: 100%;
@@ -103,6 +105,7 @@ body, main {
   margin-bottom: 0;
   color: white;
 }
+
 @media screen and (max-width:1008px) {
   .faqText {
     padding-right: 0 !important;
