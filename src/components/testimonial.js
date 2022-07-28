@@ -8,7 +8,7 @@ const Testimonial = () => {
     className: "center",
     centerMode: true,
     infinite: true,
-    centerPadding: "410px",
+    centerPadding: "394px",
     slidesToShow: 1,
     slideToScroll: 1,
     speed: 500,
