@@ -89,9 +89,7 @@ line-height: 18px;
   background: #F1F3FF;
   box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.15);
   border-radius: 8px;
-/*   padding-top: 69px;
-  padding-left: 46px;
-  padding-right: 32px; */
+
 }
 .slick-slide > div {
   margin: 0 16px;
@@ -126,13 +124,52 @@ line-height: 18px;
   position: relative;
   z-index: 1;
 }
-
+.selectBox {
+  border: 1px solid #CCCCCC;
+border-radius: 2px;
+  padding: 9px 12px;
+  min-width: 209px;
+}
+.selectBox:focus {
+  border-color: #5CB85F;
+  border-style: solid;
+  box-shadow: 0 0 0 1px #5CB85F ;
+  border-width: 1px;
+}
+.searchButton {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 8px 12px;
+  width: 94px;
+  height: 36px;
+  background: #5CB85F;
+  border-radius: 2px;
+  color: #FFFFFF;
+  margin-bottom: 1px;
+}
+@media screen and (max-width:1384px) {
+  #search {
+    padding-left: 90px !important;
+    padding-right: 90px !important;
+  }
+}
+@media screen and (max-width:1278px) {
+  #search {
+    margin-top: 0 !important;
+  }
+  .rowSearch {
+    display: block !important;
+  }
+  .searchButton {
+    margin-top: 12px;
+  }
+}
 @media screen and (max-width:1008px) {
   .faqText {
     padding-right: 0 !important;
   }
-}
-@media screen and (max-width:1008px) {
   .nav1, .nav2, .navbar-toggler {
     margin-left: 16px !important;
     margin-right: 16px !important;
@@ -140,6 +177,8 @@ line-height: 18px;
   .bannerLeft {
     padding-left: 16px !important;
   }
+ 
+ 
 }
 
 @media screen and (max-width:768px) {
@@ -240,6 +279,10 @@ line-height: 18px;
   }
   .footerRow {
     padding-right: 76px !important;
+  }
+  #search {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
   }
 }
 
