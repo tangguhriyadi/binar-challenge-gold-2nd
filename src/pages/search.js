@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react'
-import { Banner } from '../components'
+import { Banner, SearchBox } from '../components'
 import axios from 'axios'
 import {API_URL} from '../utils/constant'
 
@@ -27,7 +27,7 @@ const Search = () => {
   return (
     <>
     <Banner />
-    
+    <SearchBox carData={carData}  />
     </>
   )
 }

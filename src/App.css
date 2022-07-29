@@ -39,7 +39,20 @@ body, main {
   font-size: 16px;
   line-height: 24px;
 }
-
+.font6 {
+  font-family: 'Rubik';
+font-style: normal;
+font-weight: 300;
+font-size: 12px;
+line-height: 18px;
+}
+.font7 {
+  font-family: 'Arial';
+font-style: normal;
+font-weight: 400;
+font-size: 12px;
+line-height: 18px;
+}
 .btn1 {
   color: #FFFFFF;
   font-style: normal;
@@ -105,7 +118,77 @@ body, main {
   margin-bottom: 0;
   color: white;
 }
-
+.searchContainer {
+  padding: 24px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  background-color: white;
+  z-index: 9999  !important;
+  position: relative;
+}
+.selectBox {
+  padding: 13px 9px 12px 9px;
+  border: 1px solid #CCCCCC;
+  border-radius: 2px;
+  width:208px;
+  height: 36px;
+}
+.selectBox:focus {
+  box-shadow:none;
+  border-color: #5CB85F;
+  border-width: 2px;
+}
+.btn-cari {
+  padding: 8px 12px;
+  background: #5CB85F;
+  border-radius: 2px;
+  color:white;
+  border-style: none;
+}
+.buttonContainer {
+  display: flex;
+  flex-direction: column-reverse;
+}
+.css-1bb08p-control {
+  border: 1px solid #CCCCCC !important;
+  border-radius: 2px !important;
+  width:208px !important;
+  max-height: 36px !important;
+  min-height: 36px !important;
+  
+}
+.css-m7bnei-control {
+  min-height: 36px !important;
+}
+.css-b62m3t-container{
+  width:100% !important;
+  height: 36px !important;
+  
+}
+.css-319lph-ValueContainer {
+  padding: 0 !important;
+  padding: 9px 0px 9px 12px !important;
+}
+.css-6j8wv5-Input {
+  margin:0 !important;
+  padding:0 !important;
+}
+.css-1k9fvtq-menu > div > div:hover {
+  color:#5CB85F;
+  font-weight: 700;
+ }
+.css-1xwd4ay-menu > div > div:hover {
+  color:#5CB85F;
+  font-weight: 700;
+ }
+ .css-1hb7zxy-IndicatorsContainer {
+  width:34px !important;
+ }
+ .css-tlfecz-indicatorContainer {
+  padding-left: 6px !important;
+ }
 @media screen and (max-width:1008px) {
   .faqText {
     padding-right: 0 !important;

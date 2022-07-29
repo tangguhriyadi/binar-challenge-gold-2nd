@@ -6,5 +6,6 @@ import Jumbocard from './jumbocard'
 import Faq from './faq'
 import Footer from './footer'
 import Banner from './banner'
+import SearchBox from './searchBox'
 
-export {NavbarComp, OurServices, WhyUs, Testimonial, Jumbocard, Faq, Footer, Banner}
+export {NavbarComp, OurServices, WhyUs, Testimonial, Jumbocard, Faq, Footer, Banner, SearchBox}
