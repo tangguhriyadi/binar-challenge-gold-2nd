@@ -1,9 +1,10 @@
-import React from "react";
+import React, {useState} from "react";
 import { Container, Form, Button } from "react-bootstrap";
 import Select from "react-select";
 import { categoryList, PriceList, StatusList } from "../utils/constant";
 
 const SearchBox = ({ carData }) => {
+  const [show, setShow] = useState(false)
   const customTheme = (theme) => {
     return {
       ...theme,
@@ -44,9 +45,16 @@ const SearchBox = ({ carData }) => {
     indicatorSeparator: (styles) => ({ ...styles, opacity: "0" }),
     menu: (styles) => ({ ...styles, minWidth: "219px" }),
   };
+  const onHighlight = () => {
+    setShow(true)
+  }
+  const offHighlight = () => {
+    setShow(false)
+  }
   return (
     <Container
       id="search"
+      
       style={{
         paddingLeft: "196px",
         paddingRight: "196px",
@@ -54,7 +62,7 @@ const SearchBox = ({ carData }) => {
       }}
       fluid
     >
-      <Form className="d-flex justify-content-between rowSearch">
+      <Form id={show ? "highlight" : null} onFocus={onHighlight} onBlur={offHighlight} className="d-flex justify-content-between rowSearch">
         <div>
           <Form.Label style={{marginBottom:'4px'}} className="font7">Nama Mobil</Form.Label>
           <Form.Control

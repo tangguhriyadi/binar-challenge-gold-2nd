@@ -123,6 +123,7 @@ line-height: 18px;
   padding: 24px;
   position: relative;
   z-index: 1;
+ 
 }
 .selectBox {
   border: 1px solid #CCCCCC;
@@ -148,6 +149,21 @@ border-radius: 2px;
   border-radius: 2px;
   color: #FFFFFF;
   margin-bottom: 1px;
+}
+.css-yspv78-menu > div > div:hover {
+  color:#5CB85F;
+  font-weight: 700;
+}
+.css-1hcyfwn-menu > div > div:hover {
+  color:#5CB85F;
+  font-weight: 700;
+}
+#highlight {
+  box-shadow: 0 0 0 99999px rgba(0, 0, 0, .8) !important;
+  z-index: 1050;
+  pointer-events:  auto;
+  transition: all 0.3s ease ;
+  position: relative;
 }
 @media screen and (max-width:1384px) {
   #search {
