@@ -1,10 +1,10 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import { Container, Form, Button } from "react-bootstrap";
 import Select from "react-select";
 import { categoryList, PriceList, StatusList } from "../utils/constant";
 
 const SearchBox = ({ carData }) => {
-  const [show, setShow] = useState(false)
+  const [show, setShow] = useState(false);
   const customTheme = (theme) => {
     return {
       ...theme,
@@ -45,16 +45,31 @@ const SearchBox = ({ carData }) => {
     indicatorSeparator: (styles) => ({ ...styles, opacity: "0" }),
     menu: (styles) => ({ ...styles, minWidth: "219px" }),
   };
-  const onHighlight = () => {
-    setShow(true)
-  }
-  const offHighlight = () => {
-    setShow(false)
-  }
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if(price === '<400000'){
+      
+    } else {
+      let temp = carData.filter((e) => {
+        return (
+          e.name.toLowerCase().includes(name.toLowerCase()) &&
+          e.category.includes(category) 
+          )
+      })
+    await setResult(temp)
+    console.log(temp)
+    console.log(result)
+    }
+    
+  };
+  const [name, setName] = useState('')
+  const [category, setCategory] = useState('')
+  const [price, setPrice] = useState('')
+  const [result, setResult] = useState('')
   return (
     <Container
       id="search"
-      
       style={{
         paddingLeft: "196px",
         paddingRight: "196px",
@@ -62,18 +77,31 @@ const SearchBox = ({ carData }) => {
       }}
       fluid
     >
-      <Form id={show ? "highlight" : null} onFocus={onHighlight} onBlur={offHighlight} className="d-flex justify-content-between rowSearch">
+      <Form
+        id={show ? "highlight" : null}
+        onSubmit={handleSubmit}
+        onFocus={() => setShow(true)}
+        onBlur={() => setShow(false)}
+        className="d-flex justify-content-between rowSearch"
+      >
         <div>
-          <Form.Label style={{marginBottom:'4px'}} className="font7">Nama Mobil</Form.Label>
+          <Form.Label style={{ marginBottom: "4px" }} className="font7">
+            Nama Mobil
+          </Form.Label>
           <Form.Control
+            value={name}
+            onChange={(e) => setName(e.target.value)}
             className="selectBox font7"
             type="text"
             placeholder="Ketik nama/tipe mobil"
           />
         </div>
         <div>
-          <Form.Label style={{marginBottom:'4px'}} className="font7">Kategori</Form.Label>
+          <Form.Label style={{ marginBottom: "4px" }} className="font7">
+            Kategori
+          </Form.Label>
           <Select
+            onChange={(e) => setCategory(e.value)}
             options={categoryList}
             styles={colorStyles}
             className="font7"
@@ -82,8 +110,11 @@ const SearchBox = ({ carData }) => {
           />
         </div>
         <div>
-          <Form.Label style={{marginBottom:'4px'}} className="font7">Harga</Form.Label>
+          <Form.Label style={{ marginBottom: "4px" }} className="font7">
+            Harga
+          </Form.Label>
           <Select
+            onChange={(e) => setPrice(e.value)}
             options={PriceList}
             styles={colorStyles2}
             className="font7"
@@ -92,7 +123,9 @@ const SearchBox = ({ carData }) => {
           />
         </div>
         <div>
-          <Form.Label style={{marginBottom:'4px'}} className="font7">Status</Form.Label>
+          <Form.Label style={{ marginBottom: "4px" }} className="font7">
+            Status
+          </Form.Label>
           <Select
             options={StatusList}
             styles={colorStyles}
@@ -102,11 +135,10 @@ const SearchBox = ({ carData }) => {
           />
         </div>
         <div className="d-flex flex-column-reverse">
-        <Button className="searchButton font2" type="submit" variant="none">
-          Cari Mobil
-        </Button>
+          <Button className="searchButton font2" type="submit" variant="none">
+            Cari Mobil
+          </Button>
         </div>
-        
       </Form>
     </Container>
   );
