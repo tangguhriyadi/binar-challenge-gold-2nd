@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Container, Form, Button } from "react-bootstrap";
 import Select from "react-select";
 import { categoryList, PriceList, StatusList } from "../utils/constant";
+import swal from 'sweetalert'
 
 const SearchBox = ({ carData }) => {
   const [name, setName] = useState("");
@@ -50,50 +51,54 @@ const SearchBox = ({ carData }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (price === "<400000") {
-      let temp = carData.filter((e) => {
-        return (
-          e.name.toLowerCase().includes(name.toLowerCase()) &&
-          e.category.includes(category) &&
-          e.price <= 400000
-        );
-      });
-      setResult(temp);
-      console.log(temp);
-      console.log(result);
-    } else if (price === "400000-600000") {
-      let temp = carData.filter((e) => {
-        return (
-          e.name.toLowerCase().includes(name.toLowerCase()) &&
-          e.category.includes(category) &&
-          e.price >= 400000 &&
-          e.price <= 600000
-        );
-      });
-      setResult(temp);
-      console.log(temp);
-      console.log(result);
-    } else if (price === ">600000") {
-      let temp = carData.filter((e) => {
-        return (
-          e.name.toLowerCase().includes(name.toLowerCase()) &&
-          e.category.includes(category) &&
-          e.price >= 600000
-        );
-      });
-      setResult(temp);
-      console.log(temp);
-      console.log(result);
+    if(name.length !==0 || category.length !== 0 || price.length !== 0){
+      if (price === "<400000") {
+        let temp = carData.filter((e) => {
+          return (
+            e.name.toLowerCase().includes(name.toLowerCase()) &&
+            e.category.includes(category) &&
+            e.price <= 400000
+          );
+        });
+        setResult(temp);
+        console.log(temp);
+        console.log(result);
+      } else if (price === "400000-600000") {
+        let temp = carData.filter((e) => {
+          return (
+            e.name.toLowerCase().includes(name.toLowerCase()) &&
+            e.category.includes(category) &&
+            e.price >= 400000 &&
+            e.price <= 600000
+          );
+        });
+        setResult(temp);
+        console.log(temp);
+        console.log(result);
+      } else if (price === ">600000") {
+        let temp = carData.filter((e) => {
+          return (
+            e.name.toLowerCase().includes(name.toLowerCase()) &&
+            e.category.includes(category) &&
+            e.price >= 600000
+          );
+        });
+        setResult(temp);
+        console.log(temp);
+        console.log(result);
+      } else {
+        let temp = carData.filter((e) => {
+          return (
+            e.name.toLowerCase().includes(name.toLowerCase()) &&
+            e.category.includes(category)
+          );
+        });
+        setResult(temp);
+        console.log(temp);
+        console.log(result);
+      }
     } else {
-      let temp = carData.filter((e) => {
-        return (
-          e.name.toLowerCase().includes(name.toLowerCase()) &&
-          e.category.includes(category)
-        );
-      });
-      setResult(temp);
-      console.log(temp);
-      console.log(result);
+      swal("Error", "Isikan minimal 1 kolom!", "error");
     }
   };
   const handleClick = () => {

@@ -165,6 +165,9 @@ border-radius: 2px;
   transition: all 0.3s ease ;
   position: relative;
 }
+.swal-button {
+  background-color: #5CB85F !important;
+}
 @media screen and (max-width:1384px) {
   #search {
     padding-left: 90px !important;
