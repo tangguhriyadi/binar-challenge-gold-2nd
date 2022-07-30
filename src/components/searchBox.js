@@ -4,6 +4,10 @@ import Select from "react-select";
 import { categoryList, PriceList, StatusList } from "../utils/constant";
 
 const SearchBox = ({ carData }) => {
+  const [name, setName] = useState("");
+  const [category, setCategory] = useState("");
+  const [price, setPrice] = useState("");
+  const [result, setResult] = useState("");
   const [show, setShow] = useState(false);
   const customTheme = (theme) => {
     return {
@@ -20,7 +24,6 @@ const SearchBox = ({ carData }) => {
       ...styles,
       backgroundColor: "white",
       minWidth: "208px",
-      /* height: "32px", */
       borderRadius: "2px",
       cursor: "pointer",
     }),
@@ -35,7 +38,6 @@ const SearchBox = ({ carData }) => {
       ...styles,
       backgroundColor: "white",
       minWidth: "219px",
-      /* height: "32px", */
       borderRadius: "2px",
       cursor: "pointer",
     }),
@@ -46,27 +48,57 @@ const SearchBox = ({ carData }) => {
     menu: (styles) => ({ ...styles, minWidth: "219px" }),
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    if(price === '<400000'){
-      
+    if (price === "<400000") {
+      let temp = carData.filter((e) => {
+        return (
+          e.name.toLowerCase().includes(name.toLowerCase()) &&
+          e.category.includes(category) &&
+          e.price <= 400000
+        );
+      });
+      setResult(temp);
+      console.log(temp);
+      console.log(result);
+    } else if (price === "400000-600000") {
+      let temp = carData.filter((e) => {
+        return (
+          e.name.toLowerCase().includes(name.toLowerCase()) &&
+          e.category.includes(category) &&
+          e.price >= 400000 &&
+          e.price <= 600000
+        );
+      });
+      setResult(temp);
+      console.log(temp);
+      console.log(result);
+    } else if (price === ">600000") {
+      let temp = carData.filter((e) => {
+        return (
+          e.name.toLowerCase().includes(name.toLowerCase()) &&
+          e.category.includes(category) &&
+          e.price >= 600000
+        );
+      });
+      setResult(temp);
+      console.log(temp);
+      console.log(result);
     } else {
       let temp = carData.filter((e) => {
         return (
           e.name.toLowerCase().includes(name.toLowerCase()) &&
-          e.category.includes(category) 
-          )
-      })
-    await setResult(temp)
-    console.log(temp)
-    console.log(result)
+          e.category.includes(category)
+        );
+      });
+      setResult(temp);
+      console.log(temp);
+      console.log(result);
     }
-    
   };
-  const [name, setName] = useState('')
-  const [category, setCategory] = useState('')
-  const [price, setPrice] = useState('')
-  const [result, setResult] = useState('')
+  const handleClick = () => {
+    setShow(false)
+  }
   return (
     <Container
       id="search"
@@ -77,69 +109,80 @@ const SearchBox = ({ carData }) => {
       }}
       fluid
     >
-      <Form
-        id={show ? "highlight" : null}
-        onSubmit={handleSubmit}
-        onFocus={() => setShow(true)}
-        onBlur={() => setShow(false)}
-        className="d-flex justify-content-between rowSearch"
-      >
+      <div id={show ? "highlight" : null} className=" rowSearch">
+       {result ? (<div style={{marginBottom:'16px'}} className="font2">Pencarianmu</div>) : <></> } 
         <div>
-          <Form.Label style={{ marginBottom: "4px" }} className="font7">
-            Nama Mobil
-          </Form.Label>
-          <Form.Control
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            className="selectBox font7"
-            type="text"
-            placeholder="Ketik nama/tipe mobil"
-          />
+          <Form
+            onSubmit={handleSubmit}
+            onFocus={() => setShow(true)}
+            onBlur={() => setShow(false)}
+          >
+            <div className="d-flex justify-content-between rowSearch1">
+              <div>
+                <Form.Label style={{ marginBottom: "4px" }} className="font7">
+                  Nama Mobil
+                </Form.Label>
+                <Form.Control
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  className="selectBox font7"
+                  type="text"
+                  placeholder="Ketik nama/tipe mobil"
+                />
+              </div>
+              <div>
+                <Form.Label style={{ marginBottom: "4px" }} className="font7">
+                  Kategori
+                </Form.Label>
+                <Select
+                  onChange={(e) => setCategory(e.value)}
+                  options={categoryList}
+                  styles={colorStyles}
+                  className="font7"
+                  placeholder="Masukan Kapasitas Mobil"
+                  theme={customTheme}
+                />
+              </div>
+              <div>
+                <Form.Label style={{ marginBottom: "4px" }} className="font7">
+                  Harga
+                </Form.Label>
+                <Select
+                  onChange={(e) => setPrice(e.value)}
+                  options={PriceList}
+                  styles={colorStyles2}
+                  className="font7"
+                  placeholder="Masukan Harga Sewa Per Hari"
+                  theme={customTheme}
+                />
+              </div>
+              <div>
+                <Form.Label style={{ marginBottom: "4px" }} className="font7">
+                  Status
+                </Form.Label>
+                <Select
+                  options={StatusList}
+                  styles={colorStyles}
+                  className="font7"
+                  placeholder="Disewa"
+                  theme={customTheme}
+                />
+              </div>
+              <div className="d-flex flex-column-reverse">
+                <Button
+                  className="searchButton font2"
+                  type="submit"
+                  variant="none"
+                  onClick={handleClick}
+                >
+                  Cari Mobil
+                </Button>
+              </div>
+            </div>
+          </Form>
         </div>
-        <div>
-          <Form.Label style={{ marginBottom: "4px" }} className="font7">
-            Kategori
-          </Form.Label>
-          <Select
-            onChange={(e) => setCategory(e.value)}
-            options={categoryList}
-            styles={colorStyles}
-            className="font7"
-            placeholder="Masukan Kapasitas Mobil"
-            theme={customTheme}
-          />
-        </div>
-        <div>
-          <Form.Label style={{ marginBottom: "4px" }} className="font7">
-            Harga
-          </Form.Label>
-          <Select
-            onChange={(e) => setPrice(e.value)}
-            options={PriceList}
-            styles={colorStyles2}
-            className="font7"
-            placeholder="Masukan Harga Sewa Per Hari"
-            theme={customTheme}
-          />
-        </div>
-        <div>
-          <Form.Label style={{ marginBottom: "4px" }} className="font7">
-            Status
-          </Form.Label>
-          <Select
-            options={StatusList}
-            styles={colorStyles}
-            className="font7"
-            placeholder="Disewa"
-            theme={customTheme}
-          />
-        </div>
-        <div className="d-flex flex-column-reverse">
-          <Button className="searchButton font2" type="submit" variant="none">
-            Cari Mobil
-          </Button>
-        </div>
-      </Form>
+      </div>
+      {result && (<div>asd</div>) }
     </Container>
   );
 };
