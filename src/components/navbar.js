@@ -1,4 +1,5 @@
 import { Container, Nav, Navbar, Offcanvas } from "react-bootstrap";
+import Rec74 from '../icon/Rec74.svg'
 
 function NavbarComp() {
   return (
@@ -6,7 +7,7 @@ function NavbarComp() {
      <Navbar key={"md"} expand={"md"} className="sticky-md-top font3" style={{padding:'0', backgroundColor:'#F1F3FF'}}>
     <Container fluid className="p-0" style={{marginTop:'24px'}}>
       <Navbar.Brand href="#" className="logo nav1" style={{marginLeft:'136px', padding:'0'}}>
-        <img src="images/74.png" alt="logo" loading="lazy" />
+        <img src={Rec74} alt="logo" loading="lazy" />
       </Navbar.Brand>
       <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-md`} />
       <Navbar.Offcanvas

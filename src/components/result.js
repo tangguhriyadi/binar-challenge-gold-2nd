@@ -1,9 +1,12 @@
 import React from 'react'
 import {Col, Card, Button} from 'react-bootstrap'
 import {Num} from '../utils/constant'
-
+import { useNavigate } from 'react-router-dom'
 const Result = ({item}) => {
-    
+  const navigate = useNavigate();
+  const handleDetail = () => {
+    navigate(`/detail/${item.id}`);
+  };
   return (
     <Col md={4}>
     <Card className="mt-4" style={{ height: "478px" }}>
@@ -31,7 +34,7 @@ const Result = ({item}) => {
           <Button
             className="font2 btnResult mt-2"
             size="md"
-            /* onClick={handleDetail} */
+            onClick={handleDetail}
           >
             Pilih Mobil
           </Button>

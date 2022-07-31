@@ -53,6 +53,17 @@ font-weight: 400;
 font-size: 12px;
 line-height: 18px;
 }
+.font8{
+  font-size:14px;
+    font-weight: 700;
+    line-height: 175%;
+}
+.font9{
+  font-size:12px;
+    font-weight: 300;
+    line-height: 18px
+}
+
 .btn1 {
   color: #FFFFFF;
   font-style: normal;
@@ -176,6 +187,35 @@ border-radius: 2px;
   border-radius: 2px;
   border-style: none;
   height: 48px;
+}
+.select1 {
+  background-image: url('./icon/fi_calendar.svg');
+}
+.select2 {
+  background-image: url('./icon/fi_clock.svg');
+}
+.select3 {
+  background-image: url('./icon/fi_users.svg');
+}
+#accor .accordion-button.collapsed {
+  padding:0;
+  background-color: white;
+}
+#accor .accordion-button {
+  padding:0;
+  background-color: white;
+  color:black;
+}
+#accor .accordion-button:not(.collapsed)::after {
+  filter:brightness(0%) invert(0%);
+  margin-right:6px;
+}
+#accor .accordion-button.collapsed::after {
+  filter:brightness(0%) invert(0%);
+  margin-right:6px;
+}
+#accor .accordion-button:focus {
+  box-shadow:none;
 }
 @media screen and (max-width:1384px) {
   #search {
