@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { Container, Row, Col, Card, Accordion, Form } from "react-bootstrap";
-import { useParams } from "react-router-dom";
+import { Container, Row, Col, Card, Accordion, Form, Button } from "react-bootstrap";
+import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { API_URL, Num } from "../utils/constant";
 import fi_users from "../icon/fi_users.svg";
@@ -17,9 +17,17 @@ const Detail = () => {
         })
         .catch((err) => console.log(err));
     });
+    const navigate = useNavigate()
+    const goBack = () => {
+      navigate(-1)
+    }
   return (
     <>
-    <div style={{width:'100%', backgroundColor:'#F1F3FF', height:'206px'}}></div>
+    <div style={{width:'100%', backgroundColor:'#F1F3FF', height:'206px', paddingLeft:''}}>
+      <Container style={{minHeight:'125px'}} className="d-flex flex-column-reverse">
+      <Button className='btn1' onClick={goBack} > Kembali </Button>
+      </Container>
+    </div>
     <Container className="mb-4" style={{ marginTop: "-71px" }}>
       <Card className="ps-4 pt-3 pe-4 pb-4">
         <h5 className="mb-3 mt-2 font2">
