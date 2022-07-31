@@ -23,7 +23,7 @@ function NavbarComp() {
         </Offcanvas.Header>
         <Offcanvas.Body>
           <Nav className="justify-content-end flex-grow-1 nav2" style={{marginRight:'249px'}}>
-            <Nav.Link style={{marginRight:'32px'}} href="#ourServices">Our Services</Nav.Link>
+            <Nav.Link style={{marginRight:'32px'}} href="#ourServices" className="serviceOffCanvas">Our Services</Nav.Link>
             <Nav.Link style={{marginRight:'32px'}} href="#whyUs">Why Us</Nav.Link>
             <Nav.Link style={{marginRight:'32px'}} href="#testimonial">Testimonial</Nav.Link>
             <Nav.Link href="#faq">FAQ</Nav.Link>

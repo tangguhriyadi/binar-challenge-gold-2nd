@@ -19,7 +19,8 @@ const Detail = () => {
     });
   return (
     <>
-    <Container className="mb-4" style={{ marginTop: "-50px" }}>
+    <div style={{width:'100%', backgroundColor:'#F1F3FF', height:'206px'}}></div>
+    <Container className="mb-4" style={{ marginTop: "-71px" }}>
       <Card className="ps-4 pt-3 pe-4 pb-4">
         <h5 className="mb-3 mt-2 font2">
           Pencarianmu

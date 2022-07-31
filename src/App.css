@@ -352,6 +352,13 @@ border-radius: 2px;
     padding-left: 16px !important;
     padding-right: 16px !important;
   }
+  .nav2 {
+    margin-left: 0 !important;
+  }
 }
-
+@media screen and (max-width:380px) {
+  .serviceOffCanvas {
+    margin-right: 0 !important;
+  }
+}
 
