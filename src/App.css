@@ -217,6 +217,10 @@ border-radius: 2px;
 #accor .accordion-button:focus {
   box-shadow:none;
 }
+.editButton:hover {
+  background-color: #0D28A6 !important;
+  color:#FFFFFF !important;
+}
 @media screen and (max-width:1384px) {
   #search {
     padding-left: 90px !important;

@@ -8,8 +8,8 @@ const Result = ({item}) => {
     navigate(`/detail/${item.id}`);
   };
   return (
-    <Col md={4}>
-    <Card className="mt-4" style={{ height: "478px" }}>
+    <Col lg={4}>
+    <Card className="mt-4" style={{ minheight: "478px" }}>
       <Card.Img
         style={{ height: "160px", width: "270px" }}
         variant="top"

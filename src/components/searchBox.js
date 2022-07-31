@@ -195,13 +195,27 @@ const SearchBox = ({ carData }) => {
                 />
               </div>
               <div className="d-flex flex-column-reverse">
+              {result ? (
                 <Button
-                  className="searchButton font2"
-                  type="submit"
-                  onClick={handleClick}
-                >
-                  Cari Mobil
-                </Button>
+                className="searchButton font2 editButton"
+                variant="outline-primary"
+                style={{backgroundColor:'white', color:'#0D28A6', border:'1px solid'}}
+                type="submit"
+                onClick={handleClick}
+              >
+                Edit
+              </Button>
+              ) :
+              <Button
+                className="searchButton font2"
+                
+                type="submit"
+                onClick={handleClick}
+              >
+                Cari Mobil
+              </Button>
+              }
+                
               </div>
             </div>
           </Form>
