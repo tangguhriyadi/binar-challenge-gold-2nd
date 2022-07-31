@@ -1,8 +1,9 @@
 import React, { useState } from "react";
-import { Container, Form, Button } from "react-bootstrap";
+import { Container, Form, Button, Row } from "react-bootstrap";
 import Select from "react-select";
 import { categoryList, PriceList, StatusList } from "../utils/constant";
 import swal from 'sweetalert'
+import Result from "./result";
 
 const SearchBox = ({ carData }) => {
   const [name, setName] = useState("");
@@ -60,9 +61,14 @@ const SearchBox = ({ carData }) => {
             e.price <= 400000
           );
         });
-        setResult(temp);
-        console.log(temp);
-        console.log(result);
+        if(temp.length){
+          setResult(temp);
+          console.log(temp);
+        } else {
+          swal("Error", "tidak ditemukan!", "error")
+          setResult(null)
+        }
+
       } else if (price === "400000-600000") {
         let temp = carData.filter((e) => {
           return (
@@ -72,9 +78,14 @@ const SearchBox = ({ carData }) => {
             e.price <= 600000
           );
         });
-        setResult(temp);
-        console.log(temp);
-        console.log(result);
+        if(temp.length){
+          setResult(temp);
+          console.log(temp);
+        } else {
+          swal("Error", "tidak ditemukan!", "error")
+          setResult(null)
+        }
+
       } else if (price === ">600000") {
         let temp = carData.filter((e) => {
           return (
@@ -83,9 +94,14 @@ const SearchBox = ({ carData }) => {
             e.price >= 600000
           );
         });
-        setResult(temp);
-        console.log(temp);
-        console.log(result);
+        if(temp.length){
+          setResult(temp);
+          console.log(temp);
+        } else {
+          swal("Error", "tidak ditemukan!", "error")
+          setResult(null)
+        }
+
       } else {
         let temp = carData.filter((e) => {
           return (
@@ -93,9 +109,14 @@ const SearchBox = ({ carData }) => {
             e.category.includes(category)
           );
         });
-        setResult(temp);
-        console.log(temp);
-        console.log(result);
+        if(temp.length){
+          setResult(temp);
+          console.log(temp);
+        } else {
+          swal("Error", "tidak ditemukan!", "error")
+          setResult(null)
+        }
+        
       }
     } else {
       swal("Error", "Isikan minimal 1 kolom!", "error");
@@ -177,7 +198,6 @@ const SearchBox = ({ carData }) => {
                 <Button
                   className="searchButton font2"
                   type="submit"
-                  variant="none"
                   onClick={handleClick}
                 >
                   Cari Mobil
@@ -187,7 +207,9 @@ const SearchBox = ({ carData }) => {
           </Form>
         </div>
       </div>
-      {result && (<div>asd</div>) }
+      <Row>
+      {result && result.map((item) => <Result key={item.id} item={item} /> )}
+      </Row>
     </Container>
   );
 };

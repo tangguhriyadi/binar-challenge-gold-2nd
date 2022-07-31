@@ -149,6 +149,7 @@ border-radius: 2px;
   border-radius: 2px;
   color: #FFFFFF;
   margin-bottom: 1px;
+  border-style: none;
 }
 .css-yspv78-menu > div > div:hover {
   color:#5CB85F;
@@ -167,6 +168,14 @@ border-radius: 2px;
 }
 .swal-button {
   background-color: #5CB85F !important;
+}
+.btnResult {
+  padding:8px 12px;
+  background: #5CB85F;
+  color: #FFFFFF;
+  border-radius: 2px;
+  border-style: none;
+  height: 48px;
 }
 @media screen and (max-width:1384px) {
   #search {

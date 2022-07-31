@@ -33,5 +33,9 @@ const categoryList = [
       label: "Disewa",
     },
   ];
+  const Num = new Intl.NumberFormat("de-DE", {
+    style: "decimal",
+    currency: "IDR",
+  });
 
-  export {API_URL, categoryList, PriceList, StatusList }
+  export {API_URL, categoryList, PriceList, StatusList, Num }
