@@ -1,5 +1,6 @@
 import React from 'react'
-import {Container, Row} from 'react-bootstrap'
+import {Container, Row, Button} from 'react-bootstrap'
+import { Link } from 'react-router-dom'
 
 const Jumbocard = () => {
   return (
@@ -12,7 +13,7 @@ const Jumbocard = () => {
             <p style={{maxWidth:'468px', padding:'0'}} className="font2 jumbotext">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
             </Row>
             <Row md={12}  style={{marginTop:'52px'}} className="d-flex justify-content-center btncard">
-            <div className='btn1'>Mulai Sewa Mobil</div>
+            <Button as={Link} to="/search" className='btn1' style={{marginTop:'16px'}}>Mulai Sewa Mobil</Button>
             </Row>
         </div>
 
