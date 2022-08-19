@@ -68,7 +68,7 @@ const SearchBox = ({ carData }) => {
           swal("Error", "tidak ditemukan!", "error")
           setResult(null)
         }
-
+        
       } else if (price === "400000-600000") {
         let temp = carData.filter((e) => {
           return (
@@ -121,6 +121,7 @@ const SearchBox = ({ carData }) => {
     } else {
       swal("Error", "Isikan minimal 1 kolom!", "error");
     }
+    
   };
   const handleClick = () => {
     setShow(false)

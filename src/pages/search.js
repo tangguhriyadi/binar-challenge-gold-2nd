@@ -7,9 +7,7 @@ const Search = () => {
   const num = 1
   const [carData, setCarData] = useState('')
   useEffect(() => {
-    axios.get(API_URL, {
-      headers:{Authorization: `Bearer ${localStorage.getItem('JWT')}`},
-    })
+    axios.get(API_URL)
     .then(res => {
       setCarData(res.data)
       return res.data
