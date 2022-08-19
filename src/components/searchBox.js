@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState} from "react";
 import { Container, Form, Button, Row } from "react-bootstrap";
 import Select from "react-select";
 import { categoryList, PriceList, StatusList } from "../utils/constant";
@@ -6,6 +6,7 @@ import swal from 'sweetalert'
 import Result from "./result";
 
 const SearchBox = ({ carData }) => {
+ 
   const [name, setName] = useState("");
   const [category, setCategory] = useState("");
   const [price, setPrice] = useState("");
@@ -68,7 +69,7 @@ const SearchBox = ({ carData }) => {
           swal("Error", "tidak ditemukan!", "error")
           setResult(null)
         }
-        
+        console.log(temp)
       } else if (price === "400000-600000") {
         let temp = carData.filter((e) => {
           return (
